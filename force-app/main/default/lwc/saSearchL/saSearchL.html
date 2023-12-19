@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Please Type Sales Agent Name" icon-name="standard:account">
+
+        <div class="slds-m-around_medium">
+            <lightning-input
+                label="Start Entering search"
+                type="search"
+                value={searchWord}
+                onkeyup={seacrhHandler}>
+            </lightning-input>
+        </div>
+
+        
+
+
+        <template if:true={searchWord}>
+            <template for:each={saDetails} for:item="sa">
+                <!-- Child Component -->
+                <c-sa-childhtml key={sa.Id} sa={sa}></c-sa-childhtml>
+
+                
+            </template>
+            
+            
+        </template>
+        
+    
+</lightning-card>  
+</template>
